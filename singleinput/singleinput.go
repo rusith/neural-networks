@@ -15,8 +15,8 @@ func NewSingleInputNeuron(b int, t string) *Neuron {
 func (ne *Neuron) Do(p int, w int) int {
 	n := (p * w) + ne.Bias
 	switch ne.Activation {
-	case "hardlin":
-		return hardlin(n)
+	case "hardlim":
+		return hardlim(n)
 	case "purelin":
 		return purelin(n)
 	}
