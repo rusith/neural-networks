@@ -19,6 +19,8 @@ func (ne *Neuron) Do(p int, w int) int {
 		return hardlim(n)
 	case "purelin":
 		return purelin(n)
+	case "s-hardlim":
+		return sHardlim(n)
 	}
 
 	return 0
