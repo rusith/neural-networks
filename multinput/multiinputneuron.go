@@ -1,4 +1,4 @@
-package singleinput
+package multiinput
 
 import ac "github.com/rusith/neural-networks/activators"
 
@@ -8,14 +8,17 @@ type Neuron struct {
 	Activation string
 }
 
-// NewSingleInputNeuron creates a new SingleInputNeuron 
-func NewSingleInputNeuron(b float32, t string) *Neuron {
+// NewMultiInputNeuron creates a new MultiInputNeuron 
+func NewMultiInputNeuron(b float32, t string) *Neuron {
 	return &Neuron{ Bias: b, Activation: t }
 }
 
 // Do will calculate result
-func (ne *Neuron) Do(p float32, w float32) float32 {
-	n := (p * w) + ne.Bias
+func (ne *Neuron) Do(p []float32, w []float32) float32 {
+	n := float32(0)
+	for i := 0; i < len(p); i++ {
+		n += p[i] * w[i]
+	}
 	switch ne.Activation {
 	case "hardlim":
 		return ac.Hardlim(n)
