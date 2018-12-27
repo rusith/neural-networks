@@ -17,8 +17,8 @@ func (ne *Neuron) Do(p int, w int) int {
 	switch ne.Activation {
 	case "hardlim":
 		return hardlim(n)
-	case "purelin":
-		return purelin(n)
+	case "linear":
+		return linear(n)
 	case "s-hardlim":
 		return sHardlim(n)
 	}

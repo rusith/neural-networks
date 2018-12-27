@@ -5,7 +5,7 @@ func hardlim(n int) int {
 	return 1
 }
 
-func purelin(n int) int {
+func linear(n int) int {
 	return n
 }
 
